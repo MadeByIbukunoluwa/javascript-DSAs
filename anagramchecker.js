@@ -25,3 +25,21 @@ function validAnagram(str1, str2) {
 }
 console.log(validAnagram('cinema', 'iceman'));
 console.log(validAnagram('raccecar', 'rracecar'));
+function validAnagram1(first, second) {
+    let lookup = {};
+    for (let i = 0; i < first.length; i++) {
+        let letter = first[i];
+        lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
+    }
+    for (let i = 0; i < second.length; i++) {
+        let letter = second[i];
+        if (!lookup[letter]) {
+            return false;
+        }
+        else {
+            lookup[letter] - 1;
+        }
+    }
+    return true;
+}
+console.log(validAnagram1('iceman', 'cinema'));
