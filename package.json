@@ -1,0 +1,29 @@
+{
+  "name": "javascript-dsas",
+  "version": "1.0.0",
+  "description": "a collection of DSAs implemnented in JS and TS",
+  "main": "Frequencycounter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadeByIbukunoluwa/javascript-DSAs.git"
+  },
+  "keywords": [
+    "data",
+    "structures",
+    "algorithms",
+    "javascript",
+    "typescript"
+  ],
+  "author": "MadeByibukunoluwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadeByIbukunoluwa/javascript-DSAs/issues"
+  },
+  "homepage": "https://github.com/MadeByIbukunoluwa/javascript-DSAs#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
