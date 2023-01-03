@@ -29,3 +29,28 @@
 
   //sliding window implementation
   
+
+  function maxSubarraySum (arr:number[],num:number):number | null {
+      let maxSum = 0 
+      let tempSum = 0 
+      if (arr.length === 0 || num > arr.length) return null
+      for (let i = 0; i < num;i++) {
+          maxSum += arr[i]
+          console.log(tempSum +  '  1')
+      }
+      tempSum = maxSum
+      for (let i = num; i < arr.length;i++) {
+        tempSum = tempSum - arr[i - num] + arr[i]
+        console.log(tempSum + '  2')
+        maxSum = Math.max(tempSum,maxSum)
+      }
+      return maxSum
+  }
+
+
+
+  console.log(maxSubarraySum([1,2,5,2,8,1,5,],2))
+  console.log(maxSubarraySum([1,2,5,2,8,1,5,7,9,0,4,8,5,7,6,4,3,2,2,2,2,2,6,6,4,2,2,2,2,4,5,3,21,],2))
+  console.log(maxSubarraySum([4,2,1,6],4))
+  console.log(maxSubarraySum([4,2,1,6,2],1))
+  console.log(maxSubarraySum([],4))  
