@@ -42,16 +42,87 @@ class Graph {
              delete this.AdjacencyList[vertex];
         return this 
     }
+    DFSRecursive(start) {
+      const result = [];
+      const visited = {};
+      const adjacencyList = this.AdjacencyList;
+      
+      (function dfs(vertex) {
+        if (!vertex) return null;
+        visited[vertex] = true;
+        result.push(vertex);
+        adjacencyList[vertex].forEach((neighbour) => {
+          if (!visited[neighbour]) {
+            return dfs(neighbour);
+          }
+        });
+      })(start);
+      return result;
+    }
+    DFSIterative(start) {
+        const stack = [start];
+         const result = [];
+        const visited = {};
+        let currentVertex;
+
+        visited[start] = true 
+        while(stack.length) {
+            console.log(stack)
+            currentVertex = stack.pop()
+            result.push(currentVertex)
+            this.AdjacencyList[currentVertex].forEach(neighbour => {
+                if(!visited[neighbour]) {
+                    visited[neighbour] = true
+                    stack.push(neighbour)
+                }
+            })
+        }
+        return result;
+    }
+    breadthFirst(start) {
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currentv
+        while(queue.length) {
+            currentVertex = queue.shift()
+            result.push(currentVertex)
+            this.AdjacencyList[currentVertex].forEach(neighbour => {
+                if(!visited[neighbour]) {
+                    visited[neighbour] = true 
+                    queue.push(neighbour);
+                }
+            })
+        }
+        return result 
+    }
 }
 
 let graph = new Graph()
-graph.addVertex('Lagos')
-graph.addVertex('Abuja')
-graph.addVertex('Anambra')
-graph.addEdge('Lagos','Abuja')
-graph.addEdge('Anambra','Abuja')
+// graph.addVertex('Lagos')
+// graph.addVertex('Abuja')
+// graph.addVertex('Anambra')
+// graph.addEdge('Lagos','Abuja')
+// graph.addEdge('Anambra','Abuja')
 
-graph.removeEdge('Lagos','Abuja')
-graph.removeVertex('Lagos')
+// graph.removeEdge('Lagos','Abuja')
+// graph.removeVertex('Lagos')
+graph.addVertex('A')
+graph.addVertex('B')
+graph.addVertex('C')
+graph.addVertex('D')
+graph.addVertex('E')
+graph.addVertex('F')
+
+graph.addEdge('A','B')
+graph.addEdge('A','C')
+graph.addEdge('B','D')
+graph.addEdge('C','E')
+graph.addEdge('D','E')
+graph.addEdge('D','F')
+graph.addEdge('E','F')
 
 console.log(graph)
+console.log(graph.DFSRecursive('A'))
+console.log(graph.DFSIterative('A'))
+console.log(graph.breadthFirst('A'))
