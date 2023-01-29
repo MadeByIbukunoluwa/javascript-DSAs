@@ -1,4 +1,4 @@
-// Write a function same which accepts two arrays . The function should return true if every value in the aray has it's corresponding value squared in the second array
+// Write a function same which accepts two arrays . The function should return true if every value in the array has it's corresponding value squared in the second array
 
 // My first solution
 

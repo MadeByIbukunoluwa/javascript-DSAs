@@ -1,5 +1,5 @@
 "use strict";
-// Write a function same which accepts two arrays . The function should return true if every value in the aray has it's corresponding value squared in the second array
+// Write a function same which accepts two arrays . The function should return true if every value in the array has it's corresponding value squared in the second array
 Object.defineProperty(exports, "__esModule", { value: true });
 function samets(arr1, arr2) {
     if (arr1.length !== arr2.length) {

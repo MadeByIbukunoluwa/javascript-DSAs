@@ -12,4 +12,6 @@ function naiveStringSearch(long:string,short:string) {
 }   
 
 
-console.log(naiveStringSearch('dwbucbbcuec usidnidn','usi'))
+console.log(naiveStringSearch('dwbucbbcuec usidnidn','usi'))  
+
+

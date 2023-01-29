@@ -68,32 +68,32 @@ console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 5]));
 
 // Failed Attempt 
 // Attention! This code does not work
-function countUniqueValues1(arr:number[]) {
-    let left = 0 
-    let right = 1 
-    let pair = (arr[left] === arr[right])
-    // while (left < right) {
-    while (right < arr.length) {
-        // if (pair) {
-        //     right++
-        // }
-        if (!pair) {
-             left++
-             arr[left] = arr[right]; 
-        }
-        // else right++
-         right++;
-    }
-//    return arr.slice(0,left - 1).length
-        return left + 1 
-}   
+// function countUniqueValues1(arr:number[]) {
+//     let left = 0 
+//     let right = 1 
+//     let pair = (arr[left] === arr[right])
+//     // while (left < right) {
+//     while (right < arr.length) {
+//         // if (pair) {
+//         //     right++
+//         // }
+//         if (!pair) {
+//              left++
+//              arr[left] = arr[right]; 
+//         }
+//         // else right++
+//          right++;
+//     }
+// //    return arr.slice(0,left - 1).length
+//         return left + 1 
+// }   
 
 // swap arr[left + 1] with arr[right]
 // we are just putting the value of arr[right] in arr[left + 1 ] 
-console.log(countUniqueValues1([1, 1, 1, 1, 1, 2]));
-console.log(countUniqueValues1([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
-console.log(countUniqueValues1([]));
-console.log(countUniqueValues1([-2, -1, -1, 0, 1]));
+// console.log(countUniqueValues1([1, 1, 1, 1, 1, 2]));
+// console.log(countUniqueValues1([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
+// console.log(countUniqueValues1([]));
+// console.log(countUniqueValues1([-2, -1, -1, 0, 1]));
 
 
 

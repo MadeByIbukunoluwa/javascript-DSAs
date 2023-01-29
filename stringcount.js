@@ -75,7 +75,6 @@ function isAlphaNumeric (char) {
 function charCount4(str) {
   let obj = {};
   for (let char of str) {
-      
       if (isAlphaNumeric(char)) {
         char = char.toLowerCase();
       obj[char] = ++obj[char] || 1;
