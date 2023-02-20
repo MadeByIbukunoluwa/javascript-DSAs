@@ -123,3 +123,43 @@ console.log(countUniqueValues3([1, 1, 1, 1, 1, 2]));
 console.log(countUniqueValues3([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
 console.log(countUniqueValues3([]));
 console.log(countUniqueValues3([-2, -1, -1, 0, 1]));
+
+
+
+//Question :write a program that swaps alternate digits of a given integer 'a'
+
+// If the total number of digits in the integer 'n' is even , swap the first and second digit, the third and fourth digit, the fifth and sixth digit, and so on.
+    // - for example , in the intger 564783, there are a toal number of 6 digits, Here, the number 6 is an even number. The new intgere after swapping this integer will be 657438.
+
+    // If the total number of digits in the intger 'n' is odd , then the first digit remains unchanged, and swapping begins from the second digit onwards.
+        // - For example,in the integer 512364783, there are a total number of 9 digits. Here, the number 9 is an odd number. The new integer after swapping this integer will be 521637438. In this case, the first digit remains unchanged , and the swap begins froms the second digit
+
+
+
+function swapDigits(num:number):number{
+    let newnum = num.toString().split('')
+    let digitLength = newnum.length 
+    let p1,p2 
+    if (digitLength % 2 === 0) {
+         p1 = 0;
+         p2 = 1 
+    }
+    else {
+         p1 = 1 
+         p2 = 2 
+    }
+
+        while(p2 < digitLength) {
+            // Another swapping method
+        //    [newnum[p1], newnum[p2]] = [newnum[p2], newnum[p1]];
+            let temp = newnum[p1]
+            newnum[p1] = newnum[p2]
+            newnum[p2] = temp 
+           p1 += 2 
+           p2 += 2
+    }
+    return Number(newnum.join(""))
+}
+
+
+console.log(swapDigits(1233638743484))
